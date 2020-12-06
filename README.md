@@ -1,6 +1,6 @@
 # Meteorites project
 
-This project is my week 2 weekend homework for the CodeClan data analysis course.
+This project is my week two weekend homework for the CodeClan data analysis course.
 
 ## Project structure
 The following files are saved in the project 2020_12_04_meteorites.Rproj:
@@ -45,7 +45,7 @@ It contains code chunks which produce the following output:
 
 2. Displays the 10 largest meteorites by name and the year of discovery.
 
-3. Displays the average mass for falling versus found meteorites.
+3. Displays the average mass for fell versus found meteorites.
 
 4. Displays the number of meteorites per year from 2000 onward.
 

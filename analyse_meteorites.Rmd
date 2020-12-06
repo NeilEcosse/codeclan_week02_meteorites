@@ -17,11 +17,11 @@ meteorite_landings %>%
 ```
 
 
-#Average mass of falling vs found meteorites
+#Average mass of fell vs found meteorites
 ```{r}
 meteorite_landings %>%
   group_by(fall) %>% 
-  summarise(mean_mann = mean(mass_g))
+  summarise(mean_mass = mean(mass_g))
 ```
 
 

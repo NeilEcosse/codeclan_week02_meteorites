@@ -1816,16 +1816,33 @@ summary {
   select(name, year, mass_g) %&gt;% 
   slice_max(mass_g, n = 10)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MTAsIm5jb2wiOjN9LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFTdlU0ak1SQjJmcFlvZXhjNGlZYUNJZzlBVWtCRFFaRmxvNE9HQmpnSnFzT2JOY1NLWTYrOFhrSVFBZ29rQ25nRW9LQzY4cVI3Z2V2dkFXaXU0d0dndXVZa2NyWjNISEZyeWY3bSs4WXpzelByN2U3ZWlyL25JNFFxcURLalQwK2J5UHV5KzdtMWlsQzFyRWtKVlZIZDRJbDJ6OXViQ0gzUzJ3ZEhkVk5FR094NmlCUFMzQmR5QU1KY2lJZUphTWFFTlVOS21BQzVFV0krRnJ6WnBUaWFpclZBRGpGWFk2QXpHelFpZ2dQenczNlc0SmhJa1lMeVlTdmpzY1FSWmN5Vi83aERCMzJoU0N0Z2RCcTRqbnRaUkNWVlFyTlpvM1Fla0YyZHU3N0ZpMWR6MWg0Nzk3ZTVmdjhOL044QlgwSC9uZU1EQTc2SVlObTh3ZTNkcWlIQnpjOXppOWRQVnhiUFFELzlZUk1GSjc5c2dXQzBaTDhrT0g0K3NKaTlyRmxVZnhmeXRQLzlBWS9qSVVsaCtoVTNmU002ZTB5d2ROTWI0alQ5ZWxSSVVaZGkxSFpwR25xWEwvVXhtVXorRkd2MW1JNkhXazcwWTZ4dysxQ2FpZ2k5RlVKcUlsRlVjQjFVTnMvRUt3U1haRUdZeTdqNWtyalY2MmQ4MEZxMlQ4cTQ4OVVBMjM5blYvS1M1UW1rOGx5emhCOVI3c2JnTVJ3UkJtUldkMndiYmllU2N1VTYwV3JhVmtKaGQ4L3ZDZVlVMnh0Nit3ZUc1S05pSFFNQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mass_g"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hoba","2":"1920","3":"60000000"},{"1":"Cape York","2":"1818","3":"58200000"},{"1":"Campo del Cielo","2":"NA","3":"50000000"},{"1":"Canyon Diablo","2":"1891","3":"30000000"},{"1":"Armanty","2":"1898","3":"28000000"},{"1":"Gibeon","2":"1836","3":"26000000"},{"1":"Chupaderos","2":"1852","3":"24300000"},{"1":"Mundrabilla","2":"1911","3":"24000000"},{"1":"Sikhote-Alin","2":"1947","3":"23000000"},{"1":"Bacubirito","2":"1863","3":"22000000"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>#Average mass of falling vs found meteorites</p>
+<p>#Average mass of fell vs found meteorites</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWV0ZW9yaXRlX2xhbmRpbmdzICU+JVxuICBncm91cF9ieShmYWxsKSAlPiUgXG4gIHN1bW1hcmlzZShtZWFuX21hbm4gPSBtZWFuKG1hc3NfZykpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWV0ZW9yaXRlX2xhbmRpbmdzICU+JVxuICBncm91cF9ieShmYWxsKSAlPiUgXG4gIHN1bW1hcmlzZShtZWFuX21hc3MgPSBtZWFuKG1hc3NfZykpXG5gYGAifQ== -->
 <pre class="r"><code>meteorite_landings %&gt;%
   group_by(fall) %&gt;% 
-  summarise(mean_mann = mean(mass_g))</code></pre>
+  summarise(mean_mass = mean(mass_g))</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
+<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUF3dHlpVERtaXVCaVlHQmdabUJtQTVLc1FDWURhMmlJbTY0RkF3TUxFNUREeU1EQ3dBbWlLNERTd2tBR1NGQUFURU1rV054U2MzS2diRmEzL05LOEZDQ0RENlRBNGNNY3J0aVROdzQ0TXJqN0swdWRmbzltSW10ZVltNXFNYnBwYVlsdzB6aHpVeFB6NG5NVGk0dlJkSElXNVpmcndYVHpnblEzQUluLy8vLy9RN2NpT1Flc0cyd0ZUSkFySmJFa1VTK3RDS2dmeUVQWHdwNWZVSktabndmVXhBVHlMU3VhWnNZaU5BSCswanlRUzFKMGt6Tks4N0oxalVFV2dLVWhnQmZLWmtKbGc2eGsrZzgxaWhWcUZGdHFYbnBtWGlyTTdUbUpTYW13b09BRCtoanNZYjJDb3N5OEVwaFBnS0xGZWlYNUpZa3dkVnpKK1Rrd0ViRGZHUDRCQUYzckxSTGtBUUFBIn0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["fall"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mean_mass"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Fell","2":"68032.65"},{"1":"Found","2":"133353.89"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1840,12 +1857,22 @@ summary {
   summarise(number_of_meteorites  = n()) %&gt;% 
   arrange(year)</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
+<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MTQsIm5jb2wiOjJ9LCJyZGYiOiJINHNJQUFBQUFBQUFBMTJRVFVyRFFCVEhYOUtrMG9CVjBHc2tJQ0s0ektLb0N4Y2lGU0lJZGRwTTIyQXlFeVlUdERzdjRNWUxkT2tkdklJcnorSE9BelMrU2Q4Z1RlQ2YzNXMzOHo1dlI4bHBrQVFBMElOZUgvOCttdURmalMvQ2N3RFB4WU1ESGd3TVgvRDZDQTNqSEJyRjY5aThobmc5SWw0UnI0azN4REV4SVQ0UUg0a3BjVW5NaVNWUkEzMzdWUHNIOVluNlFuMmozbER2cUEvVUpjb2tYcUR1VVN2VTJiYnZuWUY4d1FwZW9YSFlYbTZkM29velJmYXhxSXNwVnhNNW54UmNjNmt5YmQ3dkpCa28rUnpaUktZNzl4Vi9UZFA4ZHF2TmNsYlphdFlacEV5emFLNHdIaytiVHNpZUxIVW1CUWE1WnU5K0o5aFJIY2RCTFV3bmFUaGIxdUlwUERFRjJ1di8zVG0wUDJ2VFR0eUdVdm1VcXMvRkloUGM5cDZ6S2MvcE1NU0oyNEdqVW1WQzIwblFXMFZhYW1iZkJUT1pXMDg3RzJ6K0FLdGR0R0J1QWdBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["number_of_meteorites"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"2000","2":"235"},{"1":"2001","2":"186"},{"1":"2002","2":"203"},{"1":"2003","2":"209"},{"1":"2004","2":"141"},{"1":"2005","2":"146"},{"1":"2006","2":"167"},{"1":"2007","2":"71"},{"1":"2008","2":"96"},{"1":"2009","2":"103"},{"1":"2010","2":"89"},{"1":"2011","2":"121"},{"1":"2012","2":"53"},{"1":"2013","2":"2"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[14]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWV0ZW9yaXRlcyBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBCcmluZyBpbiBjb2RlIHRvIGxvYWQgYW5kIGNsZWFuIGRhdGEKYGBge3J9CnNvdXJjZSgibG9hZF9jbGVhbl9tZXRlb3JpdGVzLlIiKQpgYGAKCgojIDEwIGxhcmdlc3QgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JSAKICBzZWxlY3QobmFtZSwgeWVhciwgbWFzc19nKSAlPiUgCiAgc2xpY2VfbWF4KG1hc3NfZywgbiA9IDEwKQpgYGAKCgojQXZlcmFnZSBtYXNzIG9mIGZhbGxpbmcgdnMgZm91bmQgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JQogIGdyb3VwX2J5KGZhbGwpICU+JSAKICBzdW1tYXJpc2UobWVhbl9tYW5uID0gbWVhbihtYXNzX2cpKQpgYGAKCgojIE51bWJlciBvZiBtZXRlb3JpdGVzIHBlciB5ZWFyIHNpbmNlIDIwMDAKYGBge3J9Cm1ldGVvcml0ZV9sYW5kaW5ncyAlPiUgCiAgZmlsdGVyKHllYXIgPj0gMjAwMCkgJT4lIAogIGdyb3VwX2J5KHllYXIpICU+JSAKICBzdW1tYXJpc2UobnVtYmVyX29mX21ldGVvcml0ZXMgID0gbigpKSAlPiUgCiAgYXJyYW5nZSh5ZWFyKQpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWV0ZW9yaXRlcyBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBCcmluZyBpbiBjb2RlIHRvIGxvYWQgYW5kIGNsZWFuIGRhdGEKYGBge3J9CnNvdXJjZSgibG9hZF9jbGVhbl9tZXRlb3JpdGVzLlIiKQpgYGAKCgojIDEwIGxhcmdlc3QgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JSAKICBzZWxlY3QobmFtZSwgeWVhciwgbWFzc19nKSAlPiUgCiAgc2xpY2VfbWF4KG1hc3NfZywgbiA9IDEwKQpgYGAKCgojQXZlcmFnZSBtYXNzIG9mIGZlbGwgdnMgZm91bmQgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JQogIGdyb3VwX2J5KGZhbGwpICU+JSAKICBzdW1tYXJpc2UobWVhbl9tYXNzID0gbWVhbihtYXNzX2cpKQpgYGAKCgojIE51bWJlciBvZiBtZXRlb3JpdGVzIHBlciB5ZWFyIHNpbmNlIDIwMDAKYGBge3J9Cm1ldGVvcml0ZV9sYW5kaW5ncyAlPiUgCiAgZmlsdGVyKHllYXIgPj0gMjAwMCkgJT4lIAogIGdyb3VwX2J5KHllYXIpICU+JSAKICBzdW1tYXJpc2UobnVtYmVyX29mX21ldGVvcml0ZXMgID0gbigpKSAlPiUgCiAgYXJyYW5nZSh5ZWFyKQpgYGAKCg==</div>
 
 
 
