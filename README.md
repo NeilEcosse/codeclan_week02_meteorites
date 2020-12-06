@@ -3,21 +3,21 @@
 This project is my week two weekend homework for the CodeClan data analysis course.
 
 ## Project structure
-The following files are saved in the project 2020_12_04_meteorites.Rproj:
+The following three files are saved in the project 2020_12_04_meteorites.Rproj:
 
-### meteorite_landings.csv
+### 1) meteorite_landings.csv
 This is the source data - the file comes from NASA and has information on meteorites that have been found up to the year 2013.
 
-### load_clean_meteorites.R
+### 2) load_clean_meteorites.R
 This contains code which reads in the data, and performs a number of checks and transformations:
 
-1. Loads dplyr, tidyverse, janitor and assertr
+1. Loads dplyr, tidyverse, janitor and assertr.
 
 2. Reads in meteorite_landings.csv
   
-3. Creates vectors of expected variable names and imported variable names.
+3. Creates vectors of expected and imported variable names.
 The expected variable names are:
-  "id", "name", "mass (g)", "fall", "year", "GeoLocation"
+  "id", "name", "mass (g)", "fall", "year", "GeoLocation".
 
 4. Checks if imported variables match expected variables - returns an error if they do not.
 
@@ -35,7 +35,7 @@ The expected variable names are:
 
 11. Orders the data by the year the meteorite was discovered.
 
-### analyse_meteorites.Rmd
+### 3) analyse_meteorites.Rmd
 This notebook brings in code to clean and transform the data, and then performs analysis on it.
 
 
@@ -49,4 +49,11 @@ It contains code chunks which produce the following output:
 
 4. Displays the number of meteorites per year from 2000 onward.
 
+5. Creates a new version of the meteorite data and adds the column "century"; displays the number of meteorites per century.
+
+6. Checks if meteorite names in the data are unique.
+
+7. Displays the number of meteorites per century where latitude and longitude both equal zero.
+
+8. Displays any meteorites which share part of my name!
 
