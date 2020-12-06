@@ -11,7 +11,8 @@ output: html_notebook
 # Bring in code to load and clean data
 I've saved the code to do this in a file called load_clean_meteorites.R
 
-However, I'm not sure at the moment how to link this in: do I wrap it in a function? Or is there a way to read the code in from the R file to this notebook?
+However, I'm not sure at the moment how to link this in: do I wrap it in a function - if so, what is my input to the function - could it be the filpath?
+Or is there a way to read the code in from the R file to this notebook?
 
 I couldn't find a solution using Google, so for the moment I'm just going to paste the code into the chunk below:
 
@@ -85,5 +86,27 @@ I couldn't find a solution using Google, so for the moment I'm just going to pas
     meteorite_landings %>% 
     arrange(year)
 
+```
+
+# 10 largest meteorites
+```{r}
+meteorite_landings %>% 
+  select(name, year, mass_g) %>% 
+  slice_max(mass_g, n = 10)
+```
+#Average mass of falling vs found meteorites
+```{r}
+meteorite_landings %>%
+  group_by(fall) %>% 
+  summarise(mean_mann = mean(mass_g))
+```
+
+# Number of meteorites per year since 2000
+```{r}
+meteorite_landings %>% 
+  filter(year >= 2000) %>% 
+  group_by(year) %>% 
+  summarise(number_of_meteorites  = n()) %>% 
+  arrange(year)
 ```
 
