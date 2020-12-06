@@ -1797,91 +1797,12 @@ summary {
 
 
 <!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICBsaWJyYXJ5KGRwbHlyKVxuICBsaWJyYXJ5KHRpZHl2ZXJzZSlcbmBgYCJ9 -->
-<pre class="r"><code>  library(dplyr)
-  library(tidyverse)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
 <div id="bring-in-code-to-load-and-clean-data" class="section level1">
 <h1>Bring in code to load and clean data</h1>
-<p>I’ve saved the code to do this in a file called load_clean_meteorites.R</p>
-<p>However, I’m not sure at the moment how to link this in: do I wrap it in a function - if so, what is my input to the function - could it be the filpath? Or is there a way to read the code in from the R file to this notebook?</p>
-<p>I couldn’t find a solution using Google, so for the moment I’m just going to paste the code into the chunk below:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuICBsaWJyYXJ5KGRwbHlyKVxuICBsaWJyYXJ5KHRpZHl2ZXJzZSlcbiAgbGlicmFyeShqYW5pdG9yKVxuICBsaWJyYXJ5KGFzc2VydHIpXG4gIFxuICBcbiAgbWV0ZW9yaXRlX2xhbmRpbmdzIDwtIHJlYWRfY3N2KFwibWV0ZW9yaXRlX2xhbmRpbmdzLmNzdlwiKVxuICBcbiAgI2NyZWF0ZSB2ZWN0b3JzIG9mIGV4cGVjdGVkIHZhcmlhYmxlIG5hbWVzIGFuZCBpbXBvcnRlZCB2YXJpYWJsZSBuYW1lc1xuICBleHBlY3RlZF92YXJpYWJsZV9uYW1lcyAgPC0gYyhcImlkXCIsIFwibmFtZVwiLCBcIm1hc3MgKGcpXCIsIFwiZmFsbFwiLCBcInllYXJcIiwgXCJHZW9Mb2NhdGlvblwiKVxuICBpbXBvcnRlZF92YXJpcmFibGVfbmFtZXMgPC0gYyhuYW1lcyhtZXRlb3JpdGVfbGFuZGluZ3MpKVxuICBcbiAgXG4gICNjaGVjayBpZiBpbXBvcnRlZCB2YXJpYWJsZXMgbWF0Y2ggZXhwZWN0ZWQgdmFyaWFibGVzIC0gcmV0dXJuIGVycm9yIGlmIHRoZXkgZG8gbm90XG4gIHN0b3BpZm5vdChcbiAgICBhbGwoZXhwZWN0ZWRfdmFyaWFibGVfbmFtZXMgPT0gaW1wb3J0ZWRfdmFyaXJhYmxlX25hbWVzKVxuICAgICAgICAgIClcbiAgXG4gICNjbGVhbiB2YXJpYWJsZSBuYW1lc1xuICBtZXRlb3JpdGVfbGFuZGluZ3MgPC0gXG4gICAgY2xlYW5fbmFtZXMobWV0ZW9yaXRlX2xhbmRpbmdzKVxuICBcbiAgXG4gICNjcmVhdGUgc2VwYXJhdGUgY29sdW1ucyBmb3IgbGF0aXR1ZGUgYW5kIGxvbmdpdHVkZVxuICAgIyByZW1vdmUgYnJhY2tldHMgYW5kIGNvbW1hXG4gICAgbWV0ZW9yaXRlX2xhbmRpbmdzIDwtIFxuICAgIG1ldGVvcml0ZV9sYW5kaW5ncyAlPiUgXG4gICAgICBtdXRhdGUoZ2VvX2xvY2F0aW9uID0gc3RyX3JlcGxhY2VfYWxsKGdlb19sb2NhdGlvbiwgXCJcXFxcKHxcXFxcKXxcXFxcLFwiLCBcIlwiKSkgXG4gIFxuICAgICAgXG4gICMgc3BsaXQgdGhlIGNvbHVtblxuICAgIG1ldGVvcml0ZV9sYW5kaW5ncyA8LSBcbiAgICBtZXRlb3JpdGVfbGFuZGluZ3MgJT4lICAgICBcbiAgICAgIHNlcGFyYXRlKGdlb19sb2NhdGlvbixcbiAgICAgICAgICAgICAgIGMoXCJsYXRpdHVkZVwiLCBcImxvbmdpdHVkZVwiKSxcbiAgICAgICAgICAgICAgIHNlcCA9XCIgXCIsXG4gICAgICAgICAgICAgICBjb252ZXJ0ID0gVFJVRSlcbiAgXG4gICMgcmVtb3ZlIG1ldGVvcml0ZXMgdW5kZXIgMTAwMGdcbiAgICBtZXRlb3JpdGVfbGFuZGluZ3MgPC0gXG4gICAgICBtZXRlb3JpdGVfbGFuZGluZ3MgJT4lXG4gICAgICBmaWx0ZXIobWFzc19nID49MTAwMClcbiAgXG4gICMgcmVtb3ZlIG1ldGVvcml0ZXMgd2hlcmUgbWFzcyBpcyBOQVxuICAgIG1ldGVvcml0ZV9sYW5kaW5ncyA8LSBcbiAgICAgIG1ldGVvcml0ZV9sYW5kaW5ncyAlPiVcbiAgICAgIGZpbHRlcighaXMubmEobWFzc19nKSlcbiAgICBcbiAgIyByZXBsYWNlIG1pc3NpbmcgbGF0aXR1ZGUgYW5kIGxvbmdpdHVkZSB3aXRoIDBcbiAgbWV0ZW9yaXRlX2xhbmRpbmdzIDwtIFxuICAgIG1ldGVvcml0ZV9sYW5kaW5ncyAlPiVcbiAgICBtdXRhdGUobGF0aXR1ZGUgPSBpZl9lbHNlKGlzLm5hKGxhdGl0dWRlKSwwLGxhdGl0dWRlKSlcbiAgXG4gIG1ldGVvcml0ZV9sYW5kaW5ncyA8LSBcbiAgICBtZXRlb3JpdGVfbGFuZGluZ3MgJT4lXG4gICAgbXV0YXRlKGxvbmdpdHVkZSA9IGlmX2Vsc2UoaXMubmEobG9uZ2l0dWRlKSwwLGxvbmdpdHVkZSkpXG4gIFxuICAgIFxuICAjIGNoZWNrIHRoYXQgdmFsdWVzIGZvciBsYXRpdHVkZSBhbmQgbG9uZ2l0dWRlIGFyZSB2YWxpZFxuICBtZXRlb3JpdGVfbGFuZGluZ3MgICU+JSBcbiAgICB2ZXJpZnkobGF0aXR1ZGUgPj0gLTkwICYgbGF0aXR1ZGUgPD0gOTApICU+JSBcbiAgICB2ZXJpZnkobG9uZ2l0dWRlID49IC0xODAgJiBsb25naXR1ZGUgPD0gMTgwKVxuICBcbiAgXG4gICMgb3JkZXIgYnkgeWVhciBvZiBkaXNjb3ZlcnlcbiAgbWV0ZW9yaXRlX2xhbmRpbmdzIDwtIFxuICAgIG1ldGVvcml0ZV9sYW5kaW5ncyAlPiUgXG4gICAgYXJyYW5nZSh5ZWFyKVxuXG5gYGAifQ== -->
-<pre class="r"><code>  library(dplyr)
-  library(tidyverse)
-  library(janitor)
-  library(assertr)
-  
-  
-  meteorite_landings &lt;- read_csv(&quot;meteorite_landings.csv&quot;)
-  
-  #create vectors of expected variable names and imported variable names
-  expected_variable_names  &lt;- c(&quot;id&quot;, &quot;name&quot;, &quot;mass (g)&quot;, &quot;fall&quot;, &quot;year&quot;, &quot;GeoLocation&quot;)
-  imported_varirable_names &lt;- c(names(meteorite_landings))
-  
-  
-  #check if imported variables match expected variables - return error if they do not
-  stopifnot(
-    all(expected_variable_names == imported_varirable_names)
-          )
-  
-  #clean variable names
-  meteorite_landings &lt;- 
-    clean_names(meteorite_landings)
-  
-  
-  #create separate columns for latitude and longitude
-   # remove brackets and comma
-    meteorite_landings &lt;- 
-    meteorite_landings %&gt;% 
-      mutate(geo_location = str_replace_all(geo_location, &quot;\\(|\\)|\\,&quot;, &quot;&quot;)) 
-  
-      
-  # split the column
-    meteorite_landings &lt;- 
-    meteorite_landings %&gt;%     
-      separate(geo_location,
-               c(&quot;latitude&quot;, &quot;longitude&quot;),
-               sep =&quot; &quot;,
-               convert = TRUE)
-  
-  # remove meteorites under 1000g
-    meteorite_landings &lt;- 
-      meteorite_landings %&gt;%
-      filter(mass_g &gt;=1000)
-  
-  # remove meteorites where mass is NA
-    meteorite_landings &lt;- 
-      meteorite_landings %&gt;%
-      filter(!is.na(mass_g))
-    
-  # replace missing latitude and longitude with 0
-  meteorite_landings &lt;- 
-    meteorite_landings %&gt;%
-    mutate(latitude = if_else(is.na(latitude),0,latitude))
-  
-  meteorite_landings &lt;- 
-    meteorite_landings %&gt;%
-    mutate(longitude = if_else(is.na(longitude),0,longitude))
-  
-    
-  # check that values for latitude and longitude are valid
-  meteorite_landings  %&gt;% 
-    verify(latitude &gt;= -90 &amp; latitude &lt;= 90) %&gt;% 
-    verify(longitude &gt;= -180 &amp; longitude &lt;= 180)
-  
-  
-  # order by year of discovery
-  meteorite_landings &lt;- 
-    meteorite_landings %&gt;% 
-    arrange(year)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlKFwibG9hZF9jbGVhbl9tZXRlb3JpdGVzLlJcIilcbmBgYCJ9 -->
+<pre class="r"><code>source(&quot;load_clean_meteorites.R&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1895,13 +1816,6 @@ summary {
   select(name, year, mass_g) %&gt;% 
   slice_max(mass_g, n = 10)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MTAsIm5jb2wiOjN9LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFTdlU0ak1SQjJmcFlvZXhjNGlZYUNJZzlBMGxCQVFaRmxvNE9HQmpnSnFzT2JOY1NLWTYrOFhrSVFBZ29rQ25nRW9LQzY4cVI3Z2V2dkFXaXU0d0dndXVZa2NyWjNISEZyeWY3bSs4WXpzelByN2U3ZXNyL25JNFFxcURLalQwK2J5UHV5KzdtMWlsQzFyRWtKVlZIZDRJbDJ6OXViQ0gzUzJ3ZEhkVk5FR094NmlCUFMzQmR5QU1KY2lJZUphTWFFTlVOS21BQzVFV0krRnJ6WnBUaWFpclZBRGpGWFk2QXpHelFpZ2dQenczNlc0SmhJa1lMeVlTdmpzY1FSWmN5Vi83aERCMzJoU0N0Z2RCcTRqbnRaUkNWVlFyTlpvM1Fla0YyZHU3N0ZpMWR6MWg0Nzk3ZTVmdjhOL044QlgwSC9uZU1EQTc2SVlObTh3ZTNkcWlIQnpjOXppOWRQVnhiUFFELzlZUk1GSjc5c2dXQzBaTDhrT0g0K3NKaTlyRmxVZnhmeXRQLzlBWS9qSVVsaCtoVTNmU002ZTB5d2ROTWI0alQ5ZWxSSVVaZGkxSFpwR25xWEwvVXhtVXorRkd2MW1JNkhXazcwWTZ4dysxQ2FpZ2k5RlVKcUlsRlVjQjFVTnMvRUt3U1haRUdZeTdqNWtyalY2MmQ4MEZxeFQ4cTQ4OVVBMjM5blYvS1M1UW1rOGx5emhCOVI3c2JnTVJ3UkJtUldkMndiYmllU2N1VTYwV3JhVmtKaGQ4L3ZDZVlVMnh0Nit3ZHRTUFJYSFFNQUFBPT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mass_g"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Hoba","2":"1920","3":"60000000"},{"1":"Cape York","2":"1818","3":"58200000"},{"1":"Campo del Cielo","2":"NA","3":"50000000"},{"1":"Canyon Diablo","2":"1891","3":"30000000"},{"1":"Armanty","2":"1898","3":"28000000"},{"1":"Gibeon","2":"1836","3":"26000000"},{"1":"Chupaderos","2":"1852","3":"24300000"},{"1":"Mundrabilla","2":"1911","3":"24000000"},{"1":"Sikhote-Alin","2":"1947","3":"23000000"},{"1":"Bacubirito","2":"1863","3":"22000000"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[10]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>#Average mass of falling vs found meteorites</p>
@@ -1912,16 +1826,6 @@ summary {
   group_by(fall) %&gt;% 
   summarise(mean_mann = mean(mass_g))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
-<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MiwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVFzVTdETUJDOXBuR3JXR3BCWW1ObGJoWVdScEJRR0pFUVNGMHFkQ1F1UkRqbktuRUVJeC9DeDdBaWZvQy9nQzlvT0tkeEplekJmbjUzNzUyZmJ5NlhwM0lwQVdBTTR3bnZnaUdJdTl0c2NRWVFSM3daUVF5Sk8xKzVmTVRBa1lmOXVTdkVtZEo2d0NJekxSVU01cTdoL1BkZHJqNi9QeTdnNnZyaytPc25jQlNFbFdwQ3R6WHUzWkpLSWQxWFNCUW9rOXE4cEY0OWMrbzMzcnF1MjRZamNvMk5IK0ZKV2FERmRGMnpubStoWkdvMnRqVEVvc2lsRllGNFZBZkVRVXZ1SmNVaWYycnAyWDBieUw2OFc3TUJSLyt4R3hsMWc1VVlyQ2FLSGt0Uy91MGFINVQvaWprbjdnT25tN29rNjVNdzI2VFdXUFI5TWpmYU0zMDIyUDRCQXFiWGxPUUJBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["fall"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mean_mann"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Fell","2":"68032.65"},{"1":"Found","2":"133353.89"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1936,22 +1840,12 @@ summary {
   summarise(number_of_meteorites  = n()) %&gt;% 
   arrange(year)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
-<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MTQsIm5jb2wiOjJ9LCJyZGYiOiJINHNJQUFBQUFBQUFBMTJRVFVyRFFCVEhYOUtrMG9CVjBHc2tHeEYwbDBWUkZ5NUVLa1FRNnJTWnRzRmtKa3dtYUhkZXdJMFg2Tkk3ZUFWWG5zT2RCMmg4azc1Qm1zQS92emR2NW4zZWpwS1RJQWtBb0FlOVB2NTlOTUcvRzErRVp3Q2Vpd2NIUEJnWXZ1RDFFUnJHT1RTSzE3RjVEZkY2Ukx3aVhoTnZpR05pUW53Z1BoSlQ0cEtZRTB1aUJ2cjJxZllQNmhQMWhmcEd2YUhlVVIrb1M1Ukp2RURkbzFhbzAyM2ZPd1A1Z2hXOFF1T3d2ZHc2dlJWbml1eGpVUmRUcmlaeVBpbTQ1bEpsMnJ6ZlNUSlE4am15aVV4MzdpdittcWI1N1ZhYjVheXkxYXd6U0psbTBWeGhQSjQyblpBOVdlcE1DZ3h5emQ3OVRyQ2pPbzZEV3BoTzBuQzJyTVZUZUc0S3ROZi91M05vZjlhbW5iZ05wZklwVlorTFJTYTQ3VDFuVTU3VFlZZ1R0d05IcGNxRXRwT2d0NHEwMU15K0MyWXl0NTUyTnRqOEFUbEFwOHh1QWdBQSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["number_of_meteorites"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"2000","2":"235"},{"1":"2001","2":"186"},{"1":"2002","2":"203"},{"1":"2003","2":"209"},{"1":"2004","2":"141"},{"1":"2005","2":"146"},{"1":"2006","2":"167"},{"1":"2007","2":"71"},{"1":"2008","2":"96"},{"1":"2009","2":"103"},{"1":"2010","2":"89"},{"1":"2011","2":"121"},{"1":"2012","2":"53"},{"1":"2013","2":"2"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[14]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWV0ZW9yaXRlcyBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CiAgbGlicmFyeShkcGx5cikKICBsaWJyYXJ5KHRpZHl2ZXJzZSkKYGBgCgojIEJyaW5nIGluIGNvZGUgdG8gbG9hZCBhbmQgY2xlYW4gZGF0YQpJJ3ZlIHNhdmVkIHRoZSBjb2RlIHRvIGRvIHRoaXMgaW4gYSBmaWxlIGNhbGxlZCBsb2FkX2NsZWFuX21ldGVvcml0ZXMuUgoKSG93ZXZlciwgSSdtIG5vdCBzdXJlIGF0IHRoZSBtb21lbnQgaG93IHRvIGxpbmsgdGhpcyBpbjogZG8gSSB3cmFwIGl0IGluIGEgZnVuY3Rpb24gLSBpZiBzbywgd2hhdCBpcyBteSBpbnB1dCB0byB0aGUgZnVuY3Rpb24gLSBjb3VsZCBpdCBiZSB0aGUgZmlscGF0aD8KT3IgaXMgdGhlcmUgYSB3YXkgdG8gcmVhZCB0aGUgY29kZSBpbiBmcm9tIHRoZSBSIGZpbGUgdG8gdGhpcyBub3RlYm9vaz8KCkkgY291bGRuJ3QgZmluZCBhIHNvbHV0aW9uIHVzaW5nIEdvb2dsZSwgc28gZm9yIHRoZSBtb21lbnQgSSdtIGp1c3QgZ29pbmcgdG8gcGFzdGUgdGhlIGNvZGUgaW50byB0aGUgY2h1bmsgYmVsb3c6CgpgYGB7cn0KICBsaWJyYXJ5KGRwbHlyKQogIGxpYnJhcnkodGlkeXZlcnNlKQogIGxpYnJhcnkoamFuaXRvcikKICBsaWJyYXJ5KGFzc2VydHIpCiAgCiAgCiAgbWV0ZW9yaXRlX2xhbmRpbmdzIDwtIHJlYWRfY3N2KCJtZXRlb3JpdGVfbGFuZGluZ3MuY3N2IikKICAKICAjY3JlYXRlIHZlY3RvcnMgb2YgZXhwZWN0ZWQgdmFyaWFibGUgbmFtZXMgYW5kIGltcG9ydGVkIHZhcmlhYmxlIG5hbWVzCiAgZXhwZWN0ZWRfdmFyaWFibGVfbmFtZXMgIDwtIGMoImlkIiwgIm5hbWUiLCAibWFzcyAoZykiLCAiZmFsbCIsICJ5ZWFyIiwgIkdlb0xvY2F0aW9uIikKICBpbXBvcnRlZF92YXJpcmFibGVfbmFtZXMgPC0gYyhuYW1lcyhtZXRlb3JpdGVfbGFuZGluZ3MpKQogIAogIAogICNjaGVjayBpZiBpbXBvcnRlZCB2YXJpYWJsZXMgbWF0Y2ggZXhwZWN0ZWQgdmFyaWFibGVzIC0gcmV0dXJuIGVycm9yIGlmIHRoZXkgZG8gbm90CiAgc3RvcGlmbm90KAogICAgYWxsKGV4cGVjdGVkX3ZhcmlhYmxlX25hbWVzID09IGltcG9ydGVkX3ZhcmlyYWJsZV9uYW1lcykKICAgICAgICAgICkKICAKICAjY2xlYW4gdmFyaWFibGUgbmFtZXMKICBtZXRlb3JpdGVfbGFuZGluZ3MgPC0gCiAgICBjbGVhbl9uYW1lcyhtZXRlb3JpdGVfbGFuZGluZ3MpCiAgCiAgCiAgI2NyZWF0ZSBzZXBhcmF0ZSBjb2x1bW5zIGZvciBsYXRpdHVkZSBhbmQgbG9uZ2l0dWRlCiAgICMgcmVtb3ZlIGJyYWNrZXRzIGFuZCBjb21tYQogICAgbWV0ZW9yaXRlX2xhbmRpbmdzIDwtIAogICAgbWV0ZW9yaXRlX2xhbmRpbmdzICU+JSAKICAgICAgbXV0YXRlKGdlb19sb2NhdGlvbiA9IHN0cl9yZXBsYWNlX2FsbChnZW9fbG9jYXRpb24sICJcXCh8XFwpfFxcLCIsICIiKSkgCiAgCiAgICAgIAogICMgc3BsaXQgdGhlIGNvbHVtbgogICAgbWV0ZW9yaXRlX2xhbmRpbmdzIDwtIAogICAgbWV0ZW9yaXRlX2xhbmRpbmdzICU+JSAgICAgCiAgICAgIHNlcGFyYXRlKGdlb19sb2NhdGlvbiwKICAgICAgICAgICAgICAgYygibGF0aXR1ZGUiLCAibG9uZ2l0dWRlIiksCiAgICAgICAgICAgICAgIHNlcCA9IiAiLAogICAgICAgICAgICAgICBjb252ZXJ0ID0gVFJVRSkKICAKICAjIHJlbW92ZSBtZXRlb3JpdGVzIHVuZGVyIDEwMDBnCiAgICBtZXRlb3JpdGVfbGFuZGluZ3MgPC0gCiAgICAgIG1ldGVvcml0ZV9sYW5kaW5ncyAlPiUKICAgICAgZmlsdGVyKG1hc3NfZyA+PTEwMDApCiAgCiAgIyByZW1vdmUgbWV0ZW9yaXRlcyB3aGVyZSBtYXNzIGlzIE5BCiAgICBtZXRlb3JpdGVfbGFuZGluZ3MgPC0gCiAgICAgIG1ldGVvcml0ZV9sYW5kaW5ncyAlPiUKICAgICAgZmlsdGVyKCFpcy5uYShtYXNzX2cpKQogICAgCiAgIyByZXBsYWNlIG1pc3NpbmcgbGF0aXR1ZGUgYW5kIGxvbmdpdHVkZSB3aXRoIDAKICBtZXRlb3JpdGVfbGFuZGluZ3MgPC0gCiAgICBtZXRlb3JpdGVfbGFuZGluZ3MgJT4lCiAgICBtdXRhdGUobGF0aXR1ZGUgPSBpZl9lbHNlKGlzLm5hKGxhdGl0dWRlKSwwLGxhdGl0dWRlKSkKICAKICBtZXRlb3JpdGVfbGFuZGluZ3MgPC0gCiAgICBtZXRlb3JpdGVfbGFuZGluZ3MgJT4lCiAgICBtdXRhdGUobG9uZ2l0dWRlID0gaWZfZWxzZShpcy5uYShsb25naXR1ZGUpLDAsbG9uZ2l0dWRlKSkKICAKICAgIAogICMgY2hlY2sgdGhhdCB2YWx1ZXMgZm9yIGxhdGl0dWRlIGFuZCBsb25naXR1ZGUgYXJlIHZhbGlkCiAgbWV0ZW9yaXRlX2xhbmRpbmdzICAlPiUgCiAgICB2ZXJpZnkobGF0aXR1ZGUgPj0gLTkwICYgbGF0aXR1ZGUgPD0gOTApICU+JSAKICAgIHZlcmlmeShsb25naXR1ZGUgPj0gLTE4MCAmIGxvbmdpdHVkZSA8PSAxODApCiAgCiAgCiAgIyBvcmRlciBieSB5ZWFyIG9mIGRpc2NvdmVyeQogIG1ldGVvcml0ZV9sYW5kaW5ncyA8LSAKICAgIG1ldGVvcml0ZV9sYW5kaW5ncyAlPiUgCiAgICBhcnJhbmdlKHllYXIpCgpgYGAKCiMgMTAgbGFyZ2VzdCBtZXRlb3JpdGVzCmBgYHtyfQptZXRlb3JpdGVfbGFuZGluZ3MgJT4lIAogIHNlbGVjdChuYW1lLCB5ZWFyLCBtYXNzX2cpICU+JSAKICBzbGljZV9tYXgobWFzc19nLCBuID0gMTApCmBgYAojQXZlcmFnZSBtYXNzIG9mIGZhbGxpbmcgdnMgZm91bmQgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JQogIGdyb3VwX2J5KGZhbGwpICU+JSAKICBzdW1tYXJpc2UobWVhbl9tYW5uID0gbWVhbihtYXNzX2cpKQpgYGAKCiMgTnVtYmVyIG9mIG1ldGVvcml0ZXMgcGVyIHllYXIgc2luY2UgMjAwMApgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JSAKICBmaWx0ZXIoeWVhciA+PSAyMDAwKSAlPiUgCiAgZ3JvdXBfYnkoeWVhcikgJT4lIAogIHN1bW1hcmlzZShudW1iZXJfb2ZfbWV0ZW9yaXRlcyAgPSBuKCkpICU+JSAKICBhcnJhbmdlKHllYXIpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWV0ZW9yaXRlcyBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBCcmluZyBpbiBjb2RlIHRvIGxvYWQgYW5kIGNsZWFuIGRhdGEKYGBge3J9CnNvdXJjZSgibG9hZF9jbGVhbl9tZXRlb3JpdGVzLlIiKQpgYGAKCgojIDEwIGxhcmdlc3QgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JSAKICBzZWxlY3QobmFtZSwgeWVhciwgbWFzc19nKSAlPiUgCiAgc2xpY2VfbWF4KG1hc3NfZywgbiA9IDEwKQpgYGAKCgojQXZlcmFnZSBtYXNzIG9mIGZhbGxpbmcgdnMgZm91bmQgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JQogIGdyb3VwX2J5KGZhbGwpICU+JSAKICBzdW1tYXJpc2UobWVhbl9tYW5uID0gbWVhbihtYXNzX2cpKQpgYGAKCgojIE51bWJlciBvZiBtZXRlb3JpdGVzIHBlciB5ZWFyIHNpbmNlIDIwMDAKYGBge3J9Cm1ldGVvcml0ZV9sYW5kaW5ncyAlPiUgCiAgZmlsdGVyKHllYXIgPj0gMjAwMCkgJT4lIAogIGdyb3VwX2J5KHllYXIpICU+JSAKICBzdW1tYXJpc2UobnVtYmVyX29mX21ldGVvcml0ZXMgID0gbigpKSAlPiUgCiAgYXJyYW5nZSh5ZWFyKQpgYGAKCg==</div>
 
 
 

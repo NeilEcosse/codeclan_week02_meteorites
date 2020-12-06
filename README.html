@@ -415,39 +415,40 @@ summary {
 
 <div id="meteorites-project" class="section level1">
 <h1>Meteorites project</h1>
-<p>This project is my week 2 weekend homework for the CodeClan data analysis course</p>
+<p>This project is my week 2 weekend homework for the CodeClan data analysis course.</p>
 <div id="project-structure" class="section level2">
 <h2>Project structure</h2>
 <p>The following files are saved in the project 2020_12_04_meteorites.Rproj:</p>
 <div id="meteorite_landings.csv" class="section level3">
-<h3>meteorite_landings.csv</h3>
+<h3>1) meteorite_landings.csv</h3>
 <p>This is the source data - the file comes from NASA and has information on meteorites that have been found up to the year 2013.</p>
 </div>
 <div id="load_clean_meteorites.r" class="section level3">
 <h3>load_clean_meteorites.R</h3>
 <p>This contains code which reads in the data, and performs a number of checks and transformations:</p>
 <ol style="list-style-type: decimal">
+<li><p>Loads dplyr, tidyverse, janitor and assertr</p></li>
 <li><p>Reads in meteorite_landings.csv</p></li>
 <li><p>Creates vectors of expected variable names and imported variable names. The expected variable names are: “id”, “name”, “mass (g)”, “fall”, “year”, “GeoLocation”</p></li>
 <li><p>Checks if imported variables match expected variables - returns an error if they do not.</p></li>
 <li><p>Cleans variable names using the janitor “clean_names” function</p></li>
-<li><p>Removes brackets and commas from the variable “geo_location” and then splits it into two new columns, “latitude” and “longitude”.</p></li>
+<li><p>Removes brackets and commas from the variable “geo_location” and then splits it into two new variables, “latitude” and “longitude”.</p></li>
 <li><p>Removes meteorites under 1000g from the dataset.</p></li>
 <li><p>Removes meteorites where mass is NA from the dataset.</p></li>
-<li><p>Replaces missing latitude and longitude values with 0</p></li>
+<li><p>Replaces missing latitude and longitude values with 0.</p></li>
 <li><p>Checks that values for latitude and longitude are valid: latitude must be between -90 and 90, longitude must be between -180 and 180; returns an error if they are not.</p></li>
 <li><p>Orders the data by the year the meteorite was discovered.</p></li>
 </ol>
 </div>
 <div id="analyse_meteorites.rmd" class="section level3">
 <h3>analyse_meteorites.Rmd</h3>
-<p>This notebook is used to perform analysis on the data.</p>
-<p>Currently, it uses copy/pasted code from load_clean_meteorites.R to load and transform the data, but the intention is to link this code in directly.</p>
+<p>This notebook brings in code to clean and transform the data, and then performs analysis on it.</p>
 <p>It contains code chunks which produce the following output:</p>
 <ol style="list-style-type: decimal">
+<li><p>Brings in the code from load_clean_meteorites.R to load packages, read in the source data, then clean and transform the data.</p></li>
 <li><p>Displays the 10 largest meteorites by name and the year of discovery.</p></li>
 <li><p>Displays the average mass for falling versus found meteorites.</p></li>
-<li><p>Displays the number of meteorites per year from 2000 onwards.</p></li>
+<li><p>Displays the number of meteorites per year from 2000 onward.</p></li>
 </ol>
 </div>
 </div>
