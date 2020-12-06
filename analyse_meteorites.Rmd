@@ -1,8 +1,6 @@
 ---
 title: "Meteorites Analysis"
-output:
-  html_document:
-    df_print: paged
+output: html_notebook
 ---
 
 # Bring in code to load and clean data
