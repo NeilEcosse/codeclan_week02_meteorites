@@ -26,9 +26,8 @@ meteorite_landings <-
  # remove brackets and comma
   meteorite_landings <- 
   meteorite_landings %>% 
-    mutate(geo_location = str_replace_all(geo_location, "\\(", "")) %>% 
-    mutate(geo_location = str_replace_all(geo_location, "\\)", "")) %>% 
-    mutate(geo_location = str_replace_all(geo_location, "\\,", ""))
+    mutate(geo_location = str_replace_all(geo_location, "\\(|\\)|\\,", "")) %>%
+
     
 # split the column
   meteorite_landings <- 
