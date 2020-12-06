@@ -1860,7 +1860,7 @@ summary {
 <!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
 <pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
 <!-- rnb-output-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MTQsIm5jb2wiOjJ9LCJyZGYiOiJINHNJQUFBQUFBQUFBMTJRVFVyRFFCVEhYOUtrMG9CVjBHc2tJQ0s0ektLb0N4Y2lGU0lJZGRwTTIyQXlFeVlUdERzdjRNWUxkT2tkdklJcnorSE9BelMrU2Q4Z1RlQ2YzNXMzOHo1dlI4bHBrQVFBMElOZUgvOCttdURmalMvQ2N3RFB4WU1ESGd3TVgvRDZDQTNqSEJyRjY5aThobmc5SWw0UnI0azN4REV4SVQ0UUg0a3BjVW5NaVNWUkEzMzdWUHNIOVluNlFuMmozbER2cUEvVUpjb2tYcUR1VVN2VTJiYnZuWUY4d1FwZW9YSFlYbTZkM29velJmYXhxSXNwVnhNNW54UmNjNmt5YmQ3dkpCa28rUnpaUktZNzl4Vi9UZFA4ZHF2TmNsYlphdFlacEV5emFLNHdIaytiVHNpZUxIVW1CUWE1WnU5K0o5aFJIY2RCTFV3bmFUaGIxdUlwUERFRjJ1di8zVG0wUDJ2VFR0eUdVdm1VcXMvRkloUGM5cDZ6S2MvcE1NU0oyNEdqVW1WQzIwblFXMFZhYW1iZkJUT1pXMDg3RzJ6K0FLdGR0R0J1QWdBQSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MTQsIm5jb2wiOjJ9LCJyZGYiOiJINHNJQUFBQUFBQUFBMTJRVFVyRFFCVEhYOUtrMG9CVjBHc2tHeFZjWmxIVWhRdVJDaEdFT20ybWJUQ1pDWk1KMnAwWGNPTUZ1dlFPWHNHVjUzRG5BUnJmcEcrUUp2RFA3ODJiZVorM28rUWtTQUlBNkVHdmozOGZUZkR2eGhmaE9ZRG40c0VCRHdhR0wzaDloSVp4RG8zaWRXeGVRN3dlRWErSTE4UWI0cGlZRUIrSWo4U1V1Q1RteEpLb2diNTlxdjJEK2tSOW9iNVJiNmgzMUFmcUVtVVNMMUQzcUJYcWJOdjN6a0MrWUFXdjBEaHNMN2RPYjhXWkl2dFkxTVdVcTRtY1R3cXV1VlNaTnU5M2tneVVmSTVzSXRPZCs0cS9wbWwrdTlWbU9hdHNOZXNNVXFaWk5GY1lqNmROSjJSUGxqcVRBb05jczNlL0UreW9qdU9nRnFhVE5Kd3RhL0VVbnBvQzdmWC83aHphbjdWcEoyNURxWHhLMWVkaWtRbHVlOC9abE9kMEdPTEU3Y0JScVRLaDdTVG9yU0l0TmJQdmdwbk1yYWVkRFRaL1FQSGpWVzRDQUFBPSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["year"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["number_of_meteorites"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"2000","2":"235"},{"1":"2001","2":"186"},{"1":"2002","2":"203"},{"1":"2003","2":"209"},{"1":"2004","2":"141"},{"1":"2005","2":"146"},{"1":"2006","2":"167"},{"1":"2007","2":"71"},{"1":"2008","2":"96"},{"1":"2009","2":"103"},{"1":"2010","2":"89"},{"1":"2011","2":"121"},{"1":"2012","2":"53"},{"1":"2013","2":"2"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[14]},"pages":{}}}
@@ -1869,10 +1869,122 @@ summary {
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
+</div>
+<div id="number-of-meteorites-by-century" class="section level1">
+<h1>Number of meteorites by century</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWV0ZW9yaXRlX2xhbmRpbmdzX2NlbnR1cnkgPC0gXG5tZXRlb3JpdGVfbGFuZGluZ3MgJT4lIFxuICBtdXRhdGUoY2VudHVyeSA9IGNhc2Vfd2hlbihcbiAgICBpcy5uYSh5ZWFyKSB+IFwiRGF0ZSBub3QgYXZhaWxhYmxlXCIsXG4gICAgeWVhciA8PSAwIH4gXCJQbGVhc2UgY2hlY2sgb2JzZXJ2YXRpb24gZm9yIGVycm9yIC0geWVhciA8PSAwXCIsXG4gICAgeWVhciA8IDE2MDAgfiBcIjE1MDBzIGFuZCBlYXJsaWVyXCIsXG4gICAgeWVhciA8IDE3MDAgfiBcIjE2MDBzXCIsXG4gICAgeWVhciA8IDE4MDAgfiBcIjE3MDBzXCIsXG4gICAgeWVhciA8IDE5MDAgfiBcIjE4MDBzXCIsXG4gICAgeWVhciA8IDIwMDAgfiBcIjE5MDBzXCIsXG4gICAgeWVhciA8IDIxMDAgfiBcIjIwMDBzXCIsXG4gICAgVFJVRSB+IFwiUGxlYXNlIGNoZWNrIG9ic2VydmF0aW9uIGZvciBlcnJvciAtIHllYXIgbm90IHJlY29nbmlzZWRcIlxuICApXG4gICkgXG5tZXRlb3JpdGVfbGFuZGluZ3NfY2VudHVyeSAlPiUgICBcbiAgZ3JvdXBfYnkoY2VudHVyeSkgJT4lIFxuICBzdW1tYXJpc2UobnVtYmVyX29mX21ldGVvcml0ZXMgID0gbigpKVxuYGBgIn0= -->
+<pre class="r"><code>meteorite_landings_century &lt;- 
+meteorite_landings %&gt;% 
+  mutate(century = case_when(
+    is.na(year) ~ &quot;Date not available&quot;,
+    year &lt;= 0 ~ &quot;Please check observation for error - year &lt;= 0&quot;,
+    year &lt; 1600 ~ &quot;1500s and earlier&quot;,
+    year &lt; 1700 ~ &quot;1600s&quot;,
+    year &lt; 1800 ~ &quot;1700s&quot;,
+    year &lt; 1900 ~ &quot;1800s&quot;,
+    year &lt; 2000 ~ &quot;1900s&quot;,
+    year &lt; 2100 ~ &quot;2000s&quot;,
+    TRUE ~ &quot;Please check observation for error - year not recognised&quot;
+  )
+  ) 
+meteorite_landings_century %&gt;%   
+  group_by(century) %&gt;% 
+  summarise(number_of_meteorites  = n())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
+<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NywibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVF5MDdETUJCMDNhWlJJb0hLNHdyS0R5UktpNEQwWHZFQkNLVGVLamR4d2NLeEs4ZmhjZVBPRjNOcFdDYzJoQnhzNzh4NmRtZjNmclcrQ3RjaFFtaU14bE80UFFpUjkvaHdGMmNJVFRDQUVacWd3THp2a0Q2RHdKQXpPTDVObk15djA3U0tpQ2dpU2hSblZObUVONytCeEMrNDdZT3NENVk5c0VqL3dPbUthQm9KcVNQeVNoZ25XMDZCUFdwN0cyUGRlOUZaQ3I0QVhrS3dIQmozQkNscFpVMWpTL281RmJwV0h4YWVpN3JjVXJXUnUwMUpOWldLYVNQNVZ5ZFE4aTF4dFl3Si9BbFgwelRmdzRZNUo1VnI2TWl3SUpva093VjZRSWVCeEpkN3phUUFFVFlyOWdiaWtSb1FzMW9ZSjBXY1A5ZmlKVjVrcG9QZENiTDIzSDVjakx1ZXVMRzFQRnRyU3NVVEU5U1poelZUYnNFeGpOeE9uT3dWRTlxTkFteVZhS21KK3hmbWtqdW1IUTRkZmdEZ2d0bXZXZ0lBQUE9PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["century"],"name":[1],"type":["chr"],"align":["left"]},{"label":["number_of_meteorites"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"1500s and earlier","2":"1"},{"1":"1600s","2":"7"},{"1":"1700s","2":"29"},{"1":"1800s","2":"512"},{"1":"1900s","2":"2443"},{"1":"2000s","2":"1822"},{"1":"Date not available","2":"57"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[7]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbk5BXG5gYGAifQ== -->
+<pre class="r"><code>NA
+NA</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="check-if-names-are-unique" class="section level1">
+<h1>Check if names are unique</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWV0ZW9yaXRlX2xhbmRpbmdzICU+JSBcbiAgZ3JvdXBfYnkobmFtZSkgJT4lIFxuICBzdW1tYXJpc2UobnVtYmVyX3RpbWVzX25hbWVfdXNlZCA9IG4oKSkgJT4lIFxuICBmaWx0ZXIobnVtYmVyX3RpbWVzX25hbWVfdXNlZCA+MSkgJT4lIFxuICBhcnJhbmdlKGRlc2MobnVtYmVyX3RpbWVzX25hbWVfdXNlZCkpXG5gYGAifQ== -->
+<pre class="r"><code>meteorite_landings %&gt;% 
+  group_by(name) %&gt;% 
+  summarise(number_times_name_used = n()) %&gt;% 
+  filter(number_times_name_used &gt;1) %&gt;% 
+  arrange(desc(number_times_name_used))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
+<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6MCwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUEyMVFRUXJDTUJCY1k2TzBvQlFFZjlFZTlPSUR4QWVJZ3JlU3RsR0xiU0pwaXI1ZTNiUUpZakNIN083czdFNG0rKzFwSFowaUFCakRlSUkzeFJUbzhiQkxOZ0FCd1dJRUFZUW1Qckc5d01TQU1ReG5Ob1FmSWhXczRhMGxFUXNHQnJUNVVuUk56bFdtSytSbHBwRjFMUys5TmFHU2o5U3QrcXRUMUt4MU9nNk1TcVpaZWxaR0RlRGxqVXpsWFZkUzRCQXhUcWczUEZJZUVIZkN2S0JNaW1zbmJzbHFaUlQ2L3RlK241TkJrN3p0TG1wM1RiaTRWTUw5QWExWnptdGJ6TkZxN3pTOXEwcG9ad1hSTnRWU004ZUxDbGs3cERjSHJ3OVo3eHo4d1FFQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["number_times_name_used"],"name":[2],"type":["int"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="check-where-lat-long-0" class="section level1">
+<h1>check where lat &amp; long = 0</h1>
+<p>Checking these as my cleaning package sets NAs to 0</p>
+<p>There are a lot in the 2000s - might be worth checking if there’s an issue with the data.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWV0ZW9yaXRlX2xhbmRpbmdzX2NlbnR1cnkgJT4lIFxuICBmaWx0ZXIobGF0aXR1ZGUgPT0gMCAmIGxvbmdpdHVkZSA9PSAwKSAlPiUgXG4gIGdyb3VwX2J5KGNlbnR1cnkpICU+JSBcbiAgc3VtbWFyaXNlKGNvdW50ID0gbigpKVxuYGBgIn0= -->
+<pre class="r"><code>meteorite_landings_century %&gt;% 
+  filter(latitude == 0 &amp; longitude == 0) %&gt;% 
+  group_by(century) %&gt;% 
+  summarise(count = n())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCB1bmdyb3VwaW5nIG91dHB1dCAob3ZlcnJpZGUgd2l0aCBgLmdyb3Vwc2AgYXJndW1lbnQpXG4ifQ== -->
+<pre><code>`summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NCwibmNvbCI6Mn0sInJkZiI6Ikg0c0lBQUFBQUFBQUExMVF5MjdDTUJCY1RBd2lFZ2dWcVdkK0lGRUtGN2lqZmtCVkpDUk9yakUwcW1zangrbmoxbC9wZjFhazY4UnVrUzNaM3BuMTdIajNZYk5icHJzVUFQclFIK0JKTVFTNmZielBWZ0FKUWRDREJFYnUvc0QwREFOSFRuRW5Qa0h2VmtWUi9ZSDFGVmdVLytCbXc2eVlLMjNuN0kyVmtqMUpnZXk0TGRUdFBScDg0MzBiT1ZQRlhrWGxYWWtuaDF3b1c1dlA4SWJyV3RsSU9ETDZQUTlpNTBTKzhHaWE1aWQyNEpKVndTR1E2WUZabGg4TjZoRmRJc2xRbjIycEZZcUlHd3FOeEQwVEVkTmF1WjhjTXY1Y3E1ZHNzWFlPYmI1Yll4OG5WekhwUEVuamExRmZheURVcVZRaWZCNW5LYVFIRTJ5NTdUZy9teElINGx0QnRzcXR0aXk4UzdtV2dXbWJnOHN2ZGFaMm5Rd0NBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["century"],"name":[1],"type":["chr"],"align":["left"]},{"label":["count"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"1800s","2":"4"},{"1":"1900s","2":"91"},{"1":"2000s","2":"929"},{"1":"Date not available","2":"22"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="check-if-any-meteorites-share-my-name" class="section level1">
+<h1>Check if any meteorites share my name!</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWV0ZW9yaXRlX2xhbmRpbmdzX2NlbnR1cnkgJT4lIFxuICBzZWxlY3QobmFtZSwgeWVhciwgbWFzc19nKSAlPiUgXG4gIGZpbHRlcihcbiAgICBzdHJfZGV0ZWN0KG5hbWUsXCJbbk5dZWlsXCIpfFxuICAgIHN0cl9kZXRlY3QobmFtZSxcIlthQV1sbGFuXCIpXG4gICAgICApICU+JSBcbiAgYXJyYW5nZShuYW1lKVxuYGBgIn0= -->
+<pre class="r"><code>meteorite_landings_century %&gt;% 
+  select(name, year, mass_g) %&gt;% 
+  filter(
+    str_detect(name,&quot;[nN]eil&quot;)|
+    str_detect(name,&quot;[aA]llan&quot;)
+      ) %&gt;% 
+  arrange(name)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NzUsIm5jb2wiOjN9LCJyZGYiOiJINHNJQUFBQUFBQUFBOVZYVFVoVVVSUytPVE9HUTVxVkM2TWdhMXNPNzJmZXZQdWd4UWdSVVVFUUJ0S2luSFRTcWVlTXpZeVZtNUlJb2xWajJXajJNNXIwdDlEYUdDVklHVUpRU2tTTGxybG9JVlRTUXFSRmFQZStjMS9hNjU2Z2lLQUxNOTg5NTd2bjc1N3plTHk5MityMFlGMlFFT0lqdm1MMkgyQmJFdGhYdTcyYUV1SXZZc0l5NGljbEhFOHllbzF6a3BCeTl0c2xpRlUxdGgxTFZ1MUkySGFtU3RHTnNDb2pxS1lxdXBUUUZVVnVvYXVLZ2hFYVJsQXBFY1ppTUVMdWloSHlkQmtSeGdnREl5SUlZV0FXQm1xQkZSakJzb3BnTVNLb0t3c2hUSGsvREVXVnA4c0lVMHFZbHJ5MWxoSldwWTJ5TE9QN0phNWVTdFNZa2NYZS9zeG9LS09qaklFeWVBWVVaU3c1WXk2T2taZFJLWksxcVdGeFRFM0Z2R2txa3JXcGFVaWxqRUZ0ZEFWbGtDNHdCcTFIUjdwZ2FnWWF4ekF4Sm9KNmkyQmQwQ2dhaDZMMTRQMmhhQVlVN1J4RmM3UFEzQ3lzMnpvMnZWVEJicFFxRlBGR1ZSV3BsS3JZSEZETlFPNk5NWWczUzhGbTFGS1FHYVdLaWp6MWxCSHlMbkFHOGFaaUdYQkdQbStja2ZlVU0vS2VNa2FUM3h0bjBEaklYWE5HWmRveS9qS09GbmJ6VnplSjN2Z2k4T3V2c1VEK01mbzl1RUpncGNDdElyK3BQOFQzL3psTy95Wis5T0JuZ2JOL0ZZazdYN25qb0I5NGRwaXZhTThad0R0NTBGK2RubUJyTXRvOWVvV3QzdWlOellDalo0Qy91eEhPajNXQi9Md1Y4RlVVY0dTMnc4RytSMkJYMkFuNjYyZkI3c3B0OE4vWkRITG5tTTVYZE9nZHlQbHlPSDh6RGVlZUNMOFBKOER2aGZQZzk4M2dVMGZ1N2dGKy9EVHcrVzBnZDQ0TGhPZW9wdkp0dlNQMzIwSS9BdjZ2Vm9EY2R3b3dMNTY3aDNPQWs1L0E3OEJla0ordEEzeDhZTGRqZjM5R3hMOE81d29oOE5zci9PWnFBZStGQVMrSjUrUEJoclZPSGVQbnhQM1VBL1lMdThFYzRPWDFJdDZXSC8yOUZQTTJjQVR3MW43QXJnNGh2eEIxaWptN09BVTRGb1E4WCsrQit4cytCdnFoQ25IL0NiamYvbmFvSTJjRFh0NGs4cG9EL3RxTW1KOFBqdXo1eWdna1l5M3hESUV2REo5UStyblMzYmZIWTJteEwyNkpaVElIbXp3dVN0S3BFeUhYVFNuN0ZmSEVGeFlXaHIyeEdteG1MMks1eW1CakxCc0xIVTd6aUlUTWUweVdwMXF6aVZTU0dSWHhUNkdBeDNoWjJxTlkyWmJrbVRSV056UzNKWTlXR3p5QVE4TXFGZnRkUy9ZK0NGbTBJRndGM0dManlhWkUwcjJHZ0IwN0ZMZUZVTVlxZGdvT3RhWVR5YXhiQ2RObVF0bFVOdWFlQ3pha2JGZmoxRWJtdndGMEFzVUhBUTRBQUE9PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["year"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["mass_g"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Allan Hills 03541","2":"2003","3":"1053.5"},{"1":"Allan Hills 82103","2":"1982","3":"2529.2"},{"1":"Allan Hills 83001","2":"1983","3":"1568.6"},{"1":"Allan Hills 83100","2":"1983","3":"3019.0"},{"1":"Allan Hills 83102","2":"1983","3":"1786.2"},{"1":"Allan Hills 83108","2":"1983","3":"1519.4"},{"1":"Allan Hills 84001","2":"1984","3":"1930.9"},{"1":"Allan Hills 84002","2":"1984","3":"7554.0"},{"1":"Allan Hills 84003","2":"1984","3":"3088.7"},{"1":"Allan Hills 84004","2":"1984","3":"9000.0"},{"1":"Allan Hills 84005","2":"1984","3":"12000.0"},{"1":"Allan Hills 84006","2":"1984","3":"16000.0"},{"1":"Allan Hills 84055","2":"1984","3":"6900.5"},{"1":"Allan Hills 84056","2":"1984","3":"2140.3"},{"1":"Allan Hills 84058","2":"1984","3":"2002.5"},{"1":"Allan Hills 84064","2":"1984","3":"1889.1"},{"1":"Allan Hills 84065","2":"1984","3":"1641.7"},{"1":"Allan Hills 84068","2":"1984","3":"1114.1"},{"1":"Allan Hills 84069","2":"1984","3":"1136.3"},{"1":"Allan Hills 84070","2":"1984","3":"3951.7"},{"1":"Allan Hills 85016","2":"1985","3":"1412.0"},{"1":"Allan Hills 85017","2":"1985","3":"2361.4"},{"1":"Allan Hills 87900","2":"1987","3":"8000.0"},{"1":"Allan Hills 90411","2":"1990","3":"5836.5"},{"1":"Allan Hills 99506","2":"1999","3":"1009.2"},{"1":"Allan Hills A76001","2":"1976","3":"20151.0"},{"1":"Allan Hills A76002","2":"1976","3":"1510.0"},{"1":"Allan Hills A76003","2":"1976","3":"10495.0"},{"1":"Allan Hills A76005","2":"1976","3":"1425.0"},{"1":"Allan Hills A76006","2":"1976","3":"1137.0"},{"1":"Allan Hills A76008","2":"1976","3":"1150.0"},{"1":"Allan Hills A76009","2":"1976","3":"407000.0"},{"1":"Allan Hills A77004","2":"1977","3":"2230.0"},{"1":"Allan Hills A77182","2":"1977","3":"1134.7"},{"1":"Allan Hills A77208","2":"1977","3":"1733.0"},{"1":"Allan Hills A77214","2":"1977","3":"2111.0"},{"1":"Allan Hills A77216","2":"1977","3":"1470.0"},{"1":"Allan Hills A77225","2":"1977","3":"5878.0"},{"1":"Allan Hills A77226","2":"1977","3":"15323.0"},{"1":"Allan Hills A77230","2":"1977","3":"2473.0"},{"1":"Allan Hills A77231","2":"1977","3":"9270.0"},{"1":"Allan Hills A77232","2":"1977","3":"6494.3"},{"1":"Allan Hills A77233","2":"1977","3":"4087.0"},{"1":"Allan Hills A77250","2":"1977","3":"10555.0"},{"1":"Allan Hills A77257","2":"1977","3":"1995.7"},{"1":"Allan Hills A77263","2":"1977","3":"1669.0"},{"1":"Allan Hills A77269","2":"1977","3":"1045.0"},{"1":"Allan Hills A77280","2":"1977","3":"3226.0"},{"1":"Allan Hills A77281","2":"1977","3":"1231.0"},{"1":"Allan Hills A77282","2":"1977","3":"4127.1"},{"1":"Allan Hills A77283","2":"1977","3":"10510.0"},{"1":"Allan Hills A77288","2":"1977","3":"1880.0"},{"1":"Allan Hills A77289","2":"1977","3":"2186.0"},{"1":"Allan Hills A77290","2":"1977","3":"3784.0"},{"1":"Allan Hills A77294","2":"1977","3":"1351.0"},{"1":"Allan Hills A77305","2":"1977","3":"6444.0"},{"1":"Allan Hills A78050","2":"1978","3":"1045.0"},{"1":"Allan Hills A78084","2":"1978","3":"14280.0"},{"1":"Allan Hills A78112","2":"1978","3":"2485.0"},{"1":"Allan Hills A78130","2":"1978","3":"2733.0"},{"1":"Allan Hills A78251","2":"1978","3":"1312.0"},{"1":"Allan Hills A78252","2":"1978","3":"2789.0"},{"1":"Allan Hills A79016","2":"1979","3":"1146.0"},{"1":"Allan Hills A79025","2":"1979","3":"1208.0"},{"1":"Allan Hills A80101","2":"1980","3":"8725.0"},{"1":"Allan Hills A81013","2":"1981","3":"17727.0"},{"1":"Allan Hills A81015","2":"1981","3":"5489.0"},{"1":"Allan Hills A81016","2":"1981","3":"3850.2"},{"1":"Allan Hills A81017","2":"1981","3":"1434.4"},{"1":"Allan Hills A81018","2":"1981","3":"2236.9"},{"1":"Allan Hills A81019","2":"1981","3":"1051.2"},{"1":"Allan Hills A81020","2":"1981","3":"1352.5"},{"1":"Allan Hills A81027","2":"1981","3":"3835.3"},{"1":"Allan Hills A81030","2":"1981","3":"1851.6"},{"1":"Allan Hills A81031","2":"1981","3":"1594.9"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[75]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWV0ZW9yaXRlcyBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBCcmluZyBpbiBjb2RlIHRvIGxvYWQgYW5kIGNsZWFuIGRhdGEKYGBge3J9CnNvdXJjZSgibG9hZF9jbGVhbl9tZXRlb3JpdGVzLlIiKQpgYGAKCgojIDEwIGxhcmdlc3QgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JSAKICBzZWxlY3QobmFtZSwgeWVhciwgbWFzc19nKSAlPiUgCiAgc2xpY2VfbWF4KG1hc3NfZywgbiA9IDEwKQpgYGAKCgojQXZlcmFnZSBtYXNzIG9mIGZlbGwgdnMgZm91bmQgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JQogIGdyb3VwX2J5KGZhbGwpICU+JSAKICBzdW1tYXJpc2UobWVhbl9tYXNzID0gbWVhbihtYXNzX2cpKQpgYGAKCgojIE51bWJlciBvZiBtZXRlb3JpdGVzIHBlciB5ZWFyIHNpbmNlIDIwMDAKYGBge3J9Cm1ldGVvcml0ZV9sYW5kaW5ncyAlPiUgCiAgZmlsdGVyKHllYXIgPj0gMjAwMCkgJT4lIAogIGdyb3VwX2J5KHllYXIpICU+JSAKICBzdW1tYXJpc2UobnVtYmVyX29mX21ldGVvcml0ZXMgID0gbigpKSAlPiUgCiAgYXJyYW5nZSh5ZWFyKQpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWV0ZW9yaXRlcyBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyBCcmluZyBpbiBjb2RlIHRvIGxvYWQgYW5kIGNsZWFuIGRhdGEKYGBge3J9CnNvdXJjZSgibG9hZF9jbGVhbl9tZXRlb3JpdGVzLlIiKQpgYGAKCgojIDEwIGxhcmdlc3QgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JSAKICBzZWxlY3QobmFtZSwgeWVhciwgbWFzc19nKSAlPiUgCiAgc2xpY2VfbWF4KG1hc3NfZywgbiA9IDEwKQpgYGAKCgojQXZlcmFnZSBtYXNzIG9mIGZlbGwgdnMgZm91bmQgbWV0ZW9yaXRlcwpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JQogIGdyb3VwX2J5KGZhbGwpICU+JSAKICBzdW1tYXJpc2UobWVhbl9tYXNzID0gbWVhbihtYXNzX2cpKQpgYGAKCgojIE51bWJlciBvZiBtZXRlb3JpdGVzIHBlciB5ZWFyIHNpbmNlIDIwMDAKYGBge3J9Cm1ldGVvcml0ZV9sYW5kaW5ncyAlPiUgCiAgZmlsdGVyKHllYXIgPj0gMjAwMCkgJT4lIAogIGdyb3VwX2J5KHllYXIpICU+JSAKICBzdW1tYXJpc2UobnVtYmVyX29mX21ldGVvcml0ZXMgID0gbigpKSAlPiUgCiAgYXJyYW5nZSh5ZWFyKQpgYGAKCiMgTnVtYmVyIG9mIG1ldGVvcml0ZXMgYnkgY2VudHVyeQpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzX2NlbnR1cnkgPC0gCm1ldGVvcml0ZV9sYW5kaW5ncyAlPiUgCiAgbXV0YXRlKGNlbnR1cnkgPSBjYXNlX3doZW4oCiAgICBpcy5uYSh5ZWFyKSB+ICJEYXRlIG5vdCBhdmFpbGFibGUiLAogICAgeWVhciA8PSAwIH4gIlBsZWFzZSBjaGVjayBvYnNlcnZhdGlvbiBmb3IgZXJyb3IgLSB5ZWFyIDw9IDAiLAogICAgeWVhciA8IDE2MDAgfiAiMTUwMHMgYW5kIGVhcmxpZXIiLAogICAgeWVhciA8IDE3MDAgfiAiMTYwMHMiLAogICAgeWVhciA8IDE4MDAgfiAiMTcwMHMiLAogICAgeWVhciA8IDE5MDAgfiAiMTgwMHMiLAogICAgeWVhciA8IDIwMDAgfiAiMTkwMHMiLAogICAgeWVhciA8IDIxMDAgfiAiMjAwMHMiLAogICAgVFJVRSB+ICJQbGVhc2UgY2hlY2sgb2JzZXJ2YXRpb24gZm9yIGVycm9yIC0geWVhciBub3QgcmVjb2duaXNlZCIKICApCiAgKSAKbWV0ZW9yaXRlX2xhbmRpbmdzX2NlbnR1cnkgJT4lICAgCiAgZ3JvdXBfYnkoY2VudHVyeSkgJT4lIAogIHN1bW1hcmlzZShudW1iZXJfb2ZfbWV0ZW9yaXRlcyAgPSBuKCkpCiAgCgpgYGAKCiMgQ2hlY2sgaWYgbmFtZXMgYXJlIHVuaXF1ZQpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzICU+JSAKICBncm91cF9ieShuYW1lKSAlPiUgCiAgc3VtbWFyaXNlKG51bWJlcl90aW1lc19uYW1lX3VzZWQgPSBuKCkpICU+JSAKICBmaWx0ZXIobnVtYmVyX3RpbWVzX25hbWVfdXNlZCA+IDEpICU+JSAKICBhcnJhbmdlKGRlc2MobnVtYmVyX3RpbWVzX25hbWVfdXNlZCkpCmBgYAoKIyAgY2hlY2sgd2hlcmUgbGF0ICYgbG9uZyA9IDAKQ2hlY2tpbmcgdGhlc2UgYXMgbXkgY2xlYW5pbmcgcGFja2FnZSBzZXRzIE5BcyB0byAwCgpUaGVyZSBhcmUgYSBsb3QgaW4gdGhlIDIwMDBzIC0gbWlnaHQgYmUgd29ydGggY2hlY2tpbmcgaWYgdGhlcmUncyBhbiBpc3N1ZSB3aXRoIHRoZSBkYXRhLgoKYGBge3J9Cm1ldGVvcml0ZV9sYW5kaW5nc19jZW50dXJ5ICU+JSAKICBmaWx0ZXIobGF0aXR1ZGUgPT0gMCAmIGxvbmdpdHVkZSA9PSAwKSAlPiUgCiAgZ3JvdXBfYnkoY2VudHVyeSkgJT4lIAogIHN1bW1hcmlzZShjb3VudCA9IG4oKSkKYGBgCgojIENoZWNrIGlmIGFueSBtZXRlb3JpdGVzIHNoYXJlIG15IG5hbWUhCgpgYGB7cn0KbWV0ZW9yaXRlX2xhbmRpbmdzX2NlbnR1cnkgJT4lIAogIHNlbGVjdChuYW1lLCB5ZWFyLCBtYXNzX2cpICU+JSAKICBmaWx0ZXIoCiAgICBzdHJfZGV0ZWN0KG5hbWUsIltuTl1laWwiKXwKICAgIHN0cl9kZXRlY3QobmFtZSwiW2FBXWxsYW4iKQogICAgICApICU+JSAKICBhcnJhbmdlKG5hbWUpCmBgYAoK</div>
 
 
 

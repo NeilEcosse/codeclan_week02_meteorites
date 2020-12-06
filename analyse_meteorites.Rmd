@@ -34,3 +34,59 @@ meteorite_landings %>%
   arrange(year)
 ```
 
+# Number of meteorites by century
+```{r}
+meteorite_landings_century <- 
+meteorite_landings %>% 
+  mutate(century = case_when(
+    is.na(year) ~ "Date not available",
+    year <= 0 ~ "Please check observation for error - year <= 0",
+    year < 1600 ~ "1500s and earlier",
+    year < 1700 ~ "1600s",
+    year < 1800 ~ "1700s",
+    year < 1900 ~ "1800s",
+    year < 2000 ~ "1900s",
+    year < 2100 ~ "2000s",
+    TRUE ~ "Please check observation for error - year not recognised"
+  )
+  ) 
+meteorite_landings_century %>%   
+  group_by(century) %>% 
+  summarise(number_of_meteorites  = n())
+  
+
+```
+
+# Check if names are unique
+```{r}
+meteorite_landings %>% 
+  group_by(name) %>% 
+  summarise(number_times_name_used = n()) %>% 
+  filter(number_times_name_used > 1) %>% 
+  arrange(desc(number_times_name_used))
+```
+
+#  check where lat & long = 0
+Checking these as my cleaning package sets NAs to 0
+
+There are a lot in the 2000s - might be worth checking if there's an issue with the data.
+
+```{r}
+meteorite_landings_century %>% 
+  filter(latitude == 0 & longitude == 0) %>% 
+  group_by(century) %>% 
+  summarise(count = n())
+```
+
+# Check if any meteorites share my name!
+
+```{r}
+meteorite_landings_century %>% 
+  select(name, year, mass_g) %>% 
+  filter(
+    str_detect(name,"[nN]eil")|
+    str_detect(name,"[aA]llan")
+      ) %>% 
+  arrange(name)
+```
+
