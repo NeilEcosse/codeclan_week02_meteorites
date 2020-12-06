@@ -63,10 +63,6 @@
     verify(latitude >= -90 & latitude <= 90) %>% 
     verify(longitude >= -180 & longitude <= 180)
   
-  # remove meteorites under 1000g
-  meteorite_landings <- 
-    meteorite_landings %>%
-    filter(mass_g >=1000)
   
   # order by year of discovery
   meteorite_landings <- 
