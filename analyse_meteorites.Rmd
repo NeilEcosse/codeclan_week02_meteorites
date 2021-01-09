@@ -9,6 +9,7 @@ source("load_clean_meteorites.R")
 ```
 
 
+
 # 10 largest meteorites
 ```{r}
 meteorite_landings %>% 
@@ -50,9 +51,21 @@ meteorite_landings %>%
     TRUE ~ "Please check observation for error - year not recognised"
   )
   ) 
-meteorite_landings_century %>%   
+meteorite_landings_century_summary <-  meteorite_landings_century %>%   
   group_by(century) %>% 
   summarise(number_of_meteorites  = n())
+
+ggplot(meteorite_landings_century_summary) + 
+  aes(x = century, y = number_of_meteorites) +
+  geom_col() +
+  labs(
+    x = "\n Century",
+    y = "Number of Meteorites \n",
+    title = "Meteorite landings by century \n"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(axis.title = element_text(size = 8))+
+  theme(axis.text.x = element_text(angle = 45))
   
 
 ```
@@ -75,7 +88,9 @@ There are a lot in the 2000s - might be worth checking if there's an issue with 
 meteorite_landings_century %>% 
   filter(latitude == 0 & longitude == 0) %>% 
   group_by(century) %>% 
-  summarise(count = n())
+  summarise(count = n()) %>% 
+  
+  
 ```
 
 # Check if any meteorites share my name!
